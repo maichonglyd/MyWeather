@@ -48,7 +48,7 @@ class Popup extends StatelessWidget {
     menuLeft = min(menuLeft, PageSize.width - Style.spacelg - rpx(400));
 
     /// 菜单底部距离屏幕顶部的高度
-    var menuBottom = PageSize.height - childPosition.dy + rpx(20);
+    var menuBottom = PageSize.height - childPosition.dy;
 
     return OverlayEntry(builder: (context) {
       return GestureDetector(
@@ -80,7 +80,7 @@ class Popup extends StatelessWidget {
                         width: rpx(400),
                         child: text(label))),
                 Positioned(
-                    bottom: PageSize.height - childPosition.dy,
+                    bottom: menuBottom - rpx(20),
                     left: shapeLeft,
                     child: CustomPaint(
                       painter: BorderPainter(lineColor: Style.borderlight),
@@ -138,8 +138,8 @@ class BorderPainter extends CustomPainter {
     p.color = lineColor;
     p.strokeWidth = rpx(1);
     canvas.drawLine(const Offset(0, 0), Offset(size.width / 2, size.height), p);
-    canvas.drawLine(Offset(size.width, size.height),
-        Offset(size.width / 2, size.height), p);
+    canvas.drawLine(
+        Offset(size.width, 0), Offset(size.width / 2, size.height), p);
   }
 
   @override

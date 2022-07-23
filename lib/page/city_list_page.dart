@@ -54,6 +54,7 @@ class _CityListPage extends State<CityListPage> {
   }
 
   handleSearch() {
+    handleCloseKeyboard();
     if (search.isNotEmpty != true) return;
     Map<String, Map<String, Object>> _data = {};
     for (var province in cityData) {
@@ -190,6 +191,7 @@ class _CityListPage extends State<CityListPage> {
               InkWell(
                   onTap: handleSearch,
                   child: Container(
+                    height: rpx(88),
                     padding: spaceHorizontal(),
                     alignment: Alignment.center,
                     child: text('搜索'),
