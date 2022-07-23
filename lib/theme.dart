@@ -1,12 +1,21 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-const int baseScreenWidth = 750;
-final MediaQueryData mediaQueryData = MediaQueryData.fromWindow(window);
-final sizeRatio = mediaQueryData.size.width / baseScreenWidth;
-
 double rpx(double size) {
-  return size * sizeRatio;
+  return size * PageSize.sizeRatio;
+}
+
+class PageSize {
+  static final MediaQueryData mediaQueryData =
+      MediaQueryData.fromWindow(window);
+  static const baseScreenWidth = 750;
+  static final sizeRatio = mediaQueryData.size.width / baseScreenWidth;
+  static final double statusBarHeight = mediaQueryData.padding.top;
+  static const double titleBarHeight = kToolbarHeight;
+  static const double bottomBarHeight = kBottomNavigationBarHeight;
+  static final double width = mediaQueryData.size.width;
+  static final double height = mediaQueryData.size.height;
+  static final double safeAreaHeight = mediaQueryData.padding.bottom;
 }
 
 class Style {

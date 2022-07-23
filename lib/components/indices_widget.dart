@@ -1,4 +1,5 @@
 import 'package:app/components/base_widget.dart';
+import 'package:app/components/popup.dart';
 import 'package:app/redux/model/indices.dart';
 import 'package:app/theme.dart';
 import 'package:flutter/material.dart';
@@ -23,24 +24,28 @@ class IndicesWidget extends StatelessWidget {
     } else if ([6, 8].contains(index)) {
       mainColor = Style.purple;
     }
-    return Container(
-      width: rpx(229),
-      padding: space(Style.spacesm),
-      alignment: Alignment.center,
-      color: mainColor.withOpacity(0.1),
-      child: Column(children: [
-        Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            text(indices.level!,
-                fontSize: rpx(80),
-                lineHeight: 1,
-                color: mainColor.withOpacity(0.8)),
-            text(indices.category!, fontSize: Style.fontsm, color: Style.white),
-          ],
-        ),
-        text(indices.name!, color: Style.white)
-      ]),
+    return Popup(
+      label: indices.text ?? indices.name ?? '暂无内容',
+      child: Container(
+        width: rpx(229),
+        padding: space(Style.spacesm),
+        alignment: Alignment.center,
+        color: mainColor.withOpacity(0.1),
+        child: Column(children: [
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              text(indices.level!,
+                  fontSize: rpx(80),
+                  lineHeight: 1,
+                  color: mainColor.withOpacity(0.8)),
+              text(indices.category!,
+                  fontSize: Style.fontsm, color: Style.white),
+            ],
+          ),
+          text(indices.name!, color: Style.white)
+        ]),
+      ),
     );
   }
 }
