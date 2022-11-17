@@ -1,3 +1,5 @@
+import 'package:app/app.dart';
+
 class MyEvents {
   MyEvents._();
   static MyEvents? _app;
@@ -39,7 +41,9 @@ class MyEvents {
       try {
         func(data);
       } catch (e) {
-        print('error: $e');
+        if (kDebugMode) {
+          mprint('error: $e');
+        }
       }
     }
   }

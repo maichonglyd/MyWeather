@@ -1,6 +1,7 @@
 import 'package:app/redux/reducer/startup.dart';
 import 'package:app/redux/redux.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:redux/redux.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,3 +30,9 @@ class App {
 }
 
 final App app = App();
+
+const bool kDebugMode = true;
+
+mprint(s) {
+  debugPrint(s);
+}

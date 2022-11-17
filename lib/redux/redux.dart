@@ -77,6 +77,8 @@ AppState initialState() {
 }
 
 log(store, action, next) {
-  print('store -> action: ${action.type}');
+  if (kDebugMode) {
+    mprint('store -> action: ${action.type}');
+  }
   next(action);
 }
