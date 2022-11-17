@@ -59,4 +59,23 @@ class HourWeather {
     t.dew = data['dew'];
     return t;
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'fxTime': fxTime,
+      'temp': temp,
+      'icon': icon,
+      'text': text,
+      'wind360': wind360,
+      'windDir': windDir,
+      'windScale': windScale,
+      'windSpeed': windSpeed,
+      'humidity': humidity,
+      'pop': pop,
+      'precip': precip,
+      'pressure': pressure,
+      'cloud': cloud,
+      'dew': dew
+    };
+  }
 }

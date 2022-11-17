@@ -111,4 +111,35 @@ class SevenWeather {
     t.uvIndex = data['uvIndex'];
     return t;
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'fxDate': fxDate,
+      'sunrise': sunrise,
+      'sunset': sunset,
+      'moonrise': moonrise,
+      'moonset': moonset,
+      'moonPhase': moonPhase,
+      'moonPhaseIcon': moonPhaseIcon,
+      'tempMax': tempMax,
+      'tempMin': tempMin,
+      'iconDay': iconDay,
+      'textDay': textDay,
+      'iconNight': iconNight,
+      'textNight': textNight,
+      'wind360Day': wind360Day,
+      'windDirDay': windDirDay,
+      'windScaleDay': windScaleDay,
+      'wind360Night': wind360Night,
+      'windDirNight': windDirNight,
+      'windScaleNight': windScaleNight,
+      'windSpeedNight': windSpeedNight,
+      'humidity': humidity,
+      'precip': precip,
+      'pressure': pressure,
+      'vis': vis,
+      'cloud': cloud,
+      'uvIndex': uvIndex
+    };
+  }
 }

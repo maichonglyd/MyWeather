@@ -62,4 +62,24 @@ class RealTimeWeather {
     t.dew = data['dew'];
     return t;
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'obsTime': obsTime,
+      'temp': temp,
+      'feelsLike': feelsLike,
+      'icon': icon,
+      'text': text,
+      'wind360': wind360,
+      'windDir': windDir,
+      'windScale': windScale,
+      'windSpeed': windSpeed,
+      'humidity': humidity,
+      'precip': precip,
+      'pressure': pressure,
+      'vis': vis,
+      'cloud': cloud,
+      'dew': dew
+    };
+  }
 }

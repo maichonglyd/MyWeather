@@ -15,7 +15,7 @@ buildRoutes(arg) {
     RouteName.cityListPage: (_) => CityListPage(
           showBack: arg != false,
         ),
-    RouteName.homePage: (_) => HomePage(),
+    RouteName.homePage: (_) => const HomePage(),
   };
 }
 

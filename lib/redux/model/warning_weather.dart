@@ -43,7 +43,6 @@ class WarningWeather {
 
   static WarningWeather parse(dynamic data) {
     var t = WarningWeather();
-
     t.id = data['id'];
     t.sender = data['sender'];
     t.pubTime = data['pubTime'];
@@ -57,5 +56,22 @@ class WarningWeather {
     t.typeName = data['typeName'];
     t.text = data['text'];
     return t;
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'sender': sender,
+      'pubTime': pubTime,
+      'title': title,
+      'startTime': startTime,
+      'endTime': endTime,
+      'status': status,
+      'severity': severity,
+      'severityColor': severityColor,
+      'type': type,
+      'typeName': typeName,
+      'text': text
+    };
   }
 }

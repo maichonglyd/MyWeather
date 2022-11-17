@@ -27,4 +27,15 @@ class Indices {
     t.text = data['text'];
     return t;
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'date': date,
+      'type': type,
+      'name': name,
+      'level': level,
+      'category': category,
+      'text': text
+    };
+  }
 }
